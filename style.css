@@ -1,3 +1,43 @@
-body {
-color: black;
+*{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.all{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-rows: 1fr 5fr;
+    grid-template-columns: 1fr 7fr;
+    grid-template-areas: 
+    "a a"
+    "b c";
+    background-color: red;
+}
+
+.item{
+    display: flex;
+}
+
+.ia{
+    grid-area: a;
+    background-color: red;
+}
+
+.ib{
+    grid-area: b;
+    background-color: lightseagreen;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.ic{
+    grid-area: c;
+    background-color: pink;
+
+    justify-content: center;
+    align-items: center;
 }
