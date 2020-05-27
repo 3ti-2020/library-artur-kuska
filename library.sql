@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 27 Maj 2020, 21:21
+-- Czas generowania: 28 Maj 2020, 00:13
 -- Wersja serwera: 10.4.11-MariaDB
 -- Wersja PHP: 7.4.6
 
@@ -95,7 +95,9 @@ ALTER TABLE `autorzy`
 -- Indeksy dla tabeli `id`
 --
 ALTER TABLE `id`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `autor` (`id_autor`),
+  ADD KEY `tytuł` (`id_tyt`);
 
 --
 -- Indeksy dla tabeli `tytuly`
@@ -124,6 +126,17 @@ ALTER TABLE `id`
 --
 ALTER TABLE `tytuly`
   MODIFY `id_tyt` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Ograniczenia dla zrzutów tabel
+--
+
+--
+-- Ograniczenia dla tabeli `id`
+--
+ALTER TABLE `id`
+  ADD CONSTRAINT `autorzy` FOREIGN KEY (`id_autor`) REFERENCES `autorzy` (`id_autor`),
+  ADD CONSTRAINT `tytuły` FOREIGN KEY (`id_tyt`) REFERENCES `tytuly` (`id_tyt`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
