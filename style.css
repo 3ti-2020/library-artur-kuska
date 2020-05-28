@@ -12,9 +12,13 @@
     grid-template-rows: 1fr 5fr;
     grid-template-columns: 1fr 7fr;
     grid-template-areas: 
-    "a a"
+    "b a"
     "b c";
-    background-color: red;
+}
+
+.dilit{
+    height: 50px;
+    width: 100px;
 }
 
 .item{
@@ -23,14 +27,20 @@
 
 .ia{
     grid-area: a;
-    background-color: red;
-}
+    font-size: x-large;
+    font-weight: bold;
+    color: rgba(4, 224, 52, 0.932);
+    background-color: rgb(35, 6, 68);
+
+    justify-content: center;
+    align-items: center;}
 
 .ib{
     grid-area: b;
     background-color: lightseagreen;
 
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -40,4 +50,51 @@
 
     justify-content: center;
     align-items: center;
+}
+
+table{
+    height: 50px;
+    width: 900px;
+}
+
+td,th{
+    text-align: center;
+    width: 100px;
+}
+
+.ins{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 67%;
+}
+
+.inst{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.del{
+    height: 33%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.delt{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.insercik{
+    height: 50px;
+    width: 150px;
 }
