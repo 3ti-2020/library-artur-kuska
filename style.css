@@ -67,21 +67,21 @@ td,th{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 67%;
+    height: 60%;
 }
 
 .inst{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     text-align: center;
     flex-direction: column;
 }
 
 .del{
-    height: 33%;
+    height: 40%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
 }
@@ -95,6 +95,6 @@ td,th{
 }
 
 .insercik{
-    height: 50px;
-    width: 150px;
+    height: 30px;
+    width: 120px;
 }

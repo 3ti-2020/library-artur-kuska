@@ -12,26 +12,26 @@
         <div class="item ia">Ins, del, php - Artur Kuśka</div>
         <div class="item ib">
             <div class="ins">
-                <div class="inst ityt">
+                <div class="inst">
 
                     <form action='ins-tyt.php' method='post' class='insercik'>
-                            <input type='text' name='tytul' placeholder="Insert tytuł">
+                            <input type='text' name='tytul'  class='insercik'placeholder="Insert tytuł">
                             <input type='submit' value = 'DODAJ'>
                     </form>
 
 
                 </div>
 
-                <div class="inst iaut">
-                    <form action='ins-tyt.php' method='post' class='insercik'>
-                            <input type='text' name='imie' placeholder="Insert imię">
-                            <input type='text' name='nazwisko' placeholder="Insert nazwisko">
+                <div class="inst">
+                    <form action='ins-aut.php' method='post' class='insercik'>
+                            <input type='text' name='imie' class='insercik' placeholder="Insert imię">
+                            <input type='text' name='nazwisko'  class='insercik' placeholder="Insert nazwisko">
                             <input type='submit' value = 'DODAJ'>
                     </form>
                 </div>
 
                    
-                <div class="inst iid">
+                <div class="inst">
 
                     <?php
                         $ser = "localhost";
@@ -68,9 +68,56 @@
             </div>
 
             <div class="del">
-                <div class="delt dtyt">b</div>
+                <div class="delt">
 
-                <div class="delt daut">b</div>
+                    <?php
+                        $ser = "localhost";
+                        $use = "root";
+                        $pass = "";
+                        $db = "library";
+                        
+                        $conn = new mysqli($ser, $use, $pass, $db);
+
+                        $res4 = $conn->query("SELECT * from autorzy");
+
+                        echo("<form action='del-aut.php' method='POST' class='insercik'>
+                            <select name='id_autor'>");
+
+                        while($row=$res4->fetch_assoc() ){
+                            echo("<option value='".$row['id_autor']."'>".$row['imie']." ".$row['nazwisko']."</option>");
+                        }
+                        echo("</select>");
+
+                        echo("<input type='submit' value='USUŃ'>");
+                        echo("</form>");
+
+                    ?>
+                </div>
+
+                <div class="delt">
+                    <?php
+                        $ser = "localhost";
+                        $use = "root";
+                        $pass = "";
+                        $db = "library";
+                        
+                        $conn = new mysqli($ser, $use, $pass, $db);
+
+                        $res5 = $conn->query("SELECT * FROM tytuly");
+
+                        echo("<form action='del-tyt.php' method='POST' class='insercik'>
+                            <select name='id_tyt'>");
+
+                        while($row=$res5->fetch_assoc() ){
+                            echo("<option value='".$row['id_tyt']."'>".$row['tytul']."</option>");
+                        }
+                        echo("</select>");
+
+                        echo("<input type='submit' value='USUŃ'>");
+                        echo("</form>");
+
+                    ?>
+                </div>
             </div>
         </div>
         <div class="item ic">
