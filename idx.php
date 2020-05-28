@@ -135,7 +135,7 @@
                 echo("<table border=1>
                     <tr>
                     <th>Usuń</th>
-                    <th>Id książki</th>
+                    <th>Id Pary</th>
                     <th>Imię</th>
                     <th>Nazwisko</th>
                     <th>Tytuł</th>
